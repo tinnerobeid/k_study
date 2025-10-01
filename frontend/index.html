@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>kstudy — Explore Korean Universities & Scholarships</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <!-- Matches your “kstudy” wordmark -->
+        <span>kstudy</span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/universities">Universities</a></li>
+          <li><a href="/scholarships">Scholarships</a></li>
+          <li><a href="/services">Services</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Video background from your file -->
+    <video class="hero-video" src="https://videos.pexels.com/video-files/31575751/13456516_640_360_30fps.mp4"
+           autoplay muted loop playsinline poster="https://images.pexels.com/videos/31575751/estudiantes-ingenieria-licenciatura-universidad-31575751.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"></video>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <h1>Explore Your Academic Future in Korea</h1>
+      <p>Discover universities, scholarships, and visa assistance all in one place.</p>
+      <a class="btn btn-outline" href="#" target="_blank" rel="nofollow">Apply Now</a>
+    </div>
+
+    <!-- Subtle translucent squares like the builder shapes -->
+    <div class="shape shape-a"></div>
+    <div class="shape shape-b"></div>
+    <div class="shape shape-c"></div>
+  </section>
+
+  <!-- Optional: quick info cards (stub you can expand) -->
+  <section class="cards">
+    <div class="container cards-grid">
+      <article class="card">
+        <h3>University Information</h3>
+        <p>Programs, rankings, tuition, and application timelines for top Korean universities.</p>
+      </article>
+      <article class="card">
+        <h3>Scholarships</h3>
+        <p>Government and university scholarships with eligibility and deadline tracking.</p>
+      </article>
+      <article class="card">
+        <h3>Visa Support</h3>
+        <p>Step-by-step guidance for D-2/D-4 student visa application and documents.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> kstudy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
