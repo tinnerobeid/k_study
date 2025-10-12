@@ -1,21 +1,32 @@
 <?php
-include 'db.php';
+require 'db.php';
+
+header('Content-Type: application/json');
 
 $data = json_decode(file_get_contents("php://input"));
 
-$email = $data->email;
-$password = $data->password;
+if (isset($data->email) && isset($data->password)) {
+    $email = $conn->real_escape_string($data->email);
+    $password = $data->password;
 
-$sql = "SELECT * FROM students WHERE email=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-$user = $result->fetch_assoc();
+    $sql = "SELECT * FROM students WHERE email = '$email'";
+    $result = $conn->query($sql);
 
-if ($user && password_verify($password, $user['password'])) {
-    echo json_encode(["status" => "success", "student_id" => $user['id']]);
+    if ($result->num_rows == 1) {
+        $student = $result->fetch_assoc();
+
+        if (password_verify($password, $student['password'])) {
+            // Remove password before sending back
+            unset($student['password']);
+            echo json_encode(["status" => true, "message" => "Login successful", "student" => $student]);
+        } else {
+            echo json_encode(["status" => false, "message" => "Invalid password"]);
+        }
+    } else {
+        echo json_encode(["status" => false, "message" => "Email not found"]);
+    }
+
 } else {
-    echo json_encode(["status" => "error", "message" => "Invalid credentials"]);
+    echo json_encode(["status" => false, "message" => "Email and password are required"]);
 }
 ?>
