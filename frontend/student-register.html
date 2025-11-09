@@ -10,9 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/header.css" />
 </head>
 <body>
-    
+<header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="kstudy home">
+        <span>kstudy</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+            <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Universities</a></li>
+          <li><a href="#services">Scholarships</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#join">Apply</a></li>
+          <li class="nav-user">
+            <a href="student-register.html" aria-label="Account">
+              <i class="fa-solid fa-user"></i>
+              <span class="nav-user__label">Account</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+</header>    
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">

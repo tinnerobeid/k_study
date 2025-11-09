@@ -11,10 +11,6 @@
 
 body {
 	background: var(--secondary-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 	font-family: var(--font-inter);
 	height: 100vh;
 	margin: -20px 0 50px;
@@ -99,6 +95,9 @@ input {
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
